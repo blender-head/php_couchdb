@@ -13,4 +13,10 @@
 		$app->render('home');
 	});
 
+	get('/say/:message', function($app) {
+		$app->set('message', $app->request('message'));
+		$app->render('home');
+	});
+
+
 
