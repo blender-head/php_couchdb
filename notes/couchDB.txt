@@ -1,0 +1,36 @@
+1. Getting a list of all databases in CouchDB :
+
+	curl -X GET http://localhost:5984/_all_dbs
+
+2. Creating new databases in CouchDB :
+
+	curl -X PUT http://localhost:5984/test-db
+
+3. Get database information :
+
+	curl -X GET http://localhost:5984/test-db
+
+4. Deleting a database In CouchDB :
+
+	curl -X DELETE http://localhost:5984/another-db
+
+5. Creating a CouchDB document :
+
+	curl -X POST -H "Content-Type:application/json" -d '{"type": "customer", "name":"Tim Juravich", "location":"Seattle, WA"}' http://localhost:5984/test-db
+
+	respond:
+
+	{"ok":true,"id":"39b1fe3cdcc7e7006694df91fb002082","rev":"1-8cf37e845c61cc239f0e98f8b7f56311"}
+
+
+6. Get a document info :
+
+	curl -X GET http://localhost:5984/test-db/39b1fe3cdcc7e7006694df91fb002082 | python -mjson.tool
+
+7. Acccessing Futon (CouchDB web frontend) :
+
+	http://localhost:5984/_utils/
+
+
+
+
